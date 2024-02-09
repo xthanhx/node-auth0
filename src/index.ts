@@ -4,12 +4,11 @@ import dotenv from 'dotenv'
 dotenv.config()
 import router from './routers';
 import { commonMiddleware } from './middlewares/common';
-const PORT = process.env.PORT || 80
+const PORT = process.env.PORT || 3000
 const app = express()
 
 app.use(cors())
 app.use(express.json())
-
 
 app.use('/v1/', commonMiddleware, router)
 
