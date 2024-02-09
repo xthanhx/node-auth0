@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  auth0:
+    build:
+      dockerfile: dockerfile
+      context: .
+    networks:
+      auth0_network:
+        aliases:
+          - auth0
+    ports:
+      - 3000:3000
+    container_name: auth0_backend
+
+networks:
+  auth0_network:
+    external: false
